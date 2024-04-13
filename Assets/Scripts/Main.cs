@@ -42,11 +42,7 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-        Light light = FindObjectOfType<Light>();
-        if (light != null)
-        {
-            light.color = Color.blue;
-        }
+    
     }
 
     void Update()
