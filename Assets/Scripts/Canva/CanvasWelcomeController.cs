@@ -7,6 +7,7 @@ public class CanvaInicio : MonoBehaviour
 
     public GameObject canvasObject;
     public GameObject canvasInfo;
+    public GameObject canvasGame;
 
     void Awake()
     {
@@ -16,6 +17,7 @@ public class CanvaInicio : MonoBehaviour
     void Start()
     {
         canvasInfo.SetActive(false);
+        canvasGame.SetActive(false);
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class CanvaInicio : MonoBehaviour
     {
         if (canvasObject != null)
             canvasObject.SetActive(false);
+        canvasGame.SetActive(true);
     }
     public void ShowInfo()
     {
