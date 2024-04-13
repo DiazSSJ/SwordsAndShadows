@@ -17818,6 +17818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasObject: {fileID: 891497614}
   canvasInfo: {fileID: 1703113849}
+  canvasGame: {fileID: 0}
 --- !u!114 &891497618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34143,6 +34144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasObject: {fileID: 891497614}
   canvasInfo: {fileID: 1703113849}
+  canvasGame: {fileID: 0}
 --- !u!114 &1703113851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43200,6 +43202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasObject: {fileID: 891497614}
   canvasInfo: {fileID: 1703113849}
+  canvasGame: {fileID: 0}
 --- !u!114 &2096722653
 MonoBehaviour:
   m_ObjectHideFlags: 0
