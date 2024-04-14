@@ -19438,7 +19438,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.06475151, y: -0, z: -0, w: 0.99790144}
-  m_LocalPosition: {x: -5.78, y: 18.95, z: 0}
+  m_LocalPosition: {x: -5.78, y: 13.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19457,8 +19457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orc: {fileID: 1466569424}
-  Timerun: 0
-  SpotLight: {fileID: 0}
+  warrior: {fileID: 1759191040}
+  spotLight: {fileID: 1370898686}
   cameraSpeed: 30
   horizontalSpeed: 2
   verticalSpeed: 2
@@ -26875,7 +26875,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
-  m_Intensity: 23
+  m_Intensity: 10
   m_Range: 50
   m_SpotAngle: 112.4
   m_InnerSpotAngle: 21.80208
@@ -35344,6 +35344,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f63e675fe3b6b9646beb49d9dd3e30ba, type: 3}
   m_PrefabInstance: {fileID: 490467467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1759191040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6131092186730876919, guid: 74cba210f6b556b4ab4f3b4d458e8a57, type: 3}
+  m_PrefabInstance: {fileID: 1848200269}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1759928396
 GameObject:
