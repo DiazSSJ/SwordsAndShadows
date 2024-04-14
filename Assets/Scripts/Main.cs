@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
 
     private static Main instance;
 
-    private bool isStarted = false; 
+    private bool isStarted = false;
     public Transform orc;
 
     public float Timerun;
@@ -26,7 +26,7 @@ public class Main : MonoBehaviour
     public float horizontalSpeed = 2.0f; // Velocidad de rotación horizontal de la cámara
     public float verticalSpeed = 2.0f; // Velocidad de rotación vertical de la cámara
     private float rotationX = 0.0f;
-    private float rotationY = 0.0f;
+    // private float rotationY = 0.0f;
 
     public float leftLimit = -2f;
     public float rightLimit = 2f;
@@ -45,12 +45,12 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-    
+
     }
 
     void Update()
     {
-        
+
         if (SpotLight != null)
         {
             SpotLight.color = Color.red;
@@ -77,10 +77,10 @@ public class Main : MonoBehaviour
 
         // Rotación de la cámara con el mouse
         rotationX += Input.GetAxis("Mouse X") * horizontalSpeed;
-        rotationY += Input.GetAxis("Mouse Y") * verticalSpeed;
-        rotationY = Mathf.Clamp(rotationY, -90, 90);
+        // rotationY += Input.GetAxis("Mouse Y") * verticalSpeed;
+        // rotationY = Mathf.Clamp(rotationY, -90, 90);
         transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
+        // transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
 
     }
 
@@ -98,6 +98,6 @@ public class Main : MonoBehaviour
 
     public static Main GetInstance()
     {
-        return instance == null ? instance = new Main(): instance;
-    } 
+        return instance == null ? instance = new Main() : instance;
+    }
 }
