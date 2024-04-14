@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47816712, g: 0.45439643, b: 0.45331168, a: 1}
+  m_IndirectSpecularColor: {r: 0.32273605, g: 0.30572692, b: 0.30472925, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2409,8 +2409,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
       propertyPath: m_BounceIntensity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.802
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050609923422395474, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1050609923422395475, guid: aff9f4bc2c7ced94d90c56f9b71e8378, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11753,11 +11773,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1350057274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -35, y: -35}
   m_SizeDelta: {x: 30, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &546449693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17816,9 +17836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30241dcbeeafc8e4994b3562554179c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasObject: {fileID: 891497614}
-  canvasInfo: {fileID: 1703113849}
-  canvasGame: {fileID: 0}
+  CanvasInicio: {fileID: 891497614}
+  CanvasInfo: {fileID: 1703113849}
+  CanvasGame: {fileID: 2116084773}
 --- !u!114 &891497618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18213,16 +18233,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &908388820
-Transform:
+--- !u!224 &908388820
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908388819}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18231,6 +18250,11 @@ Transform:
   - {fileID: 901585719}
   m_Father: {fileID: 2116084777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -375, y: -240}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &909156025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4873422012352106, guid: d4b56e6809c4abd4a94ed45b71dfeefd, type: 3}
@@ -26681,9 +26705,9 @@ RectTransform:
   - {fileID: 546449692}
   m_Father: {fileID: 2116084777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338, y: 155}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -32, y: -82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1353532087 stripped
@@ -34124,7 +34148,7 @@ GameObject:
   - component: {fileID: 1703113851}
   - component: {fileID: 1703113850}
   m_Layer: 5
-  m_Name: CanvasInfoGame
+  m_Name: CanvasInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34142,9 +34166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30241dcbeeafc8e4994b3562554179c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasObject: {fileID: 891497614}
-  canvasInfo: {fileID: 1703113849}
-  canvasGame: {fileID: 0}
+  CanvasInicio: {fileID: 891497614}
+  CanvasInfo: {fileID: 1703113849}
+  CanvasGame: {fileID: 2116084773}
 --- !u!114 &1703113851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43200,9 +43224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30241dcbeeafc8e4994b3562554179c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasObject: {fileID: 891497614}
-  canvasInfo: {fileID: 1703113849}
-  canvasGame: {fileID: 0}
+  CanvasInicio: {fileID: 891497614}
+  CanvasInfo: {fileID: 1703113849}
+  CanvasGame: {fileID: 2116084773}
 --- !u!114 &2096722653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43732,7 +43756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2116084774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44303,6 +44327,6 @@ SceneRoots:
   - {fileID: 1181008019}
   - {fileID: 683037668}
   - {fileID: 891497621}
-  - {fileID: 1735981232}
   - {fileID: 1703113854}
   - {fileID: 2116084777}
+  - {fileID: 1735981232}
