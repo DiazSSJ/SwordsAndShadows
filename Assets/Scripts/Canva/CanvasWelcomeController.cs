@@ -8,9 +8,9 @@ public class CanvaInicio : MonoBehaviour
 
 
     private static CanvaInicio instance;
-    public GameObject CanvasInicio;
-    public GameObject CanvasInfo;
-    public GameObject CanvasGame;
+    public Canvas CanvasInicio;
+    public Canvas CanvasInfo;
+    public Canvas CanvasGame;
 
     void Awake()
     {
@@ -19,7 +19,7 @@ public class CanvaInicio : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -29,21 +29,26 @@ public class CanvaInicio : MonoBehaviour
 
     public void HideCanvas()
     {
-            
-            CanvasInicio.gameObject.SetActive(false);
-            CanvasGame.gameObject.SetActive(true);
-            Main.GetInstance().SetIsStarted(false);
+
+        CanvasInicio.gameObject.SetActive(false);
+        CanvasGame.gameObject.SetActive(true);
+        Main.GetInstance().SetIsStarted(false);
     }
 
     public void ShowInfo()
     {
-        if (CanvasInfo != null)
-        {
-            CanvasInfo.SetActive(true);
-            CanvasInicio.SetActive(false);
-        }
+        CanvasInicio.gameObject.SetActive(false);
+        CanvasInfo.gameObject.SetActive(true);
+        Debug.Log("ANDO POR ACÁMK");
 
     }
+    // public void HideInfo()
+    // {
+    //     Debug.Log("Inicio");
+    //     CanvasInfo.gameObject.SetActive(false);
+    //     CanvasInicio.gameObject.SetActive(true);
+
+    // }
 
     public static CanvaInicio GetInstance()
     {
