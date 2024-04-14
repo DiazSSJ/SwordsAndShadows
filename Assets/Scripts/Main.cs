@@ -8,6 +8,9 @@ public class Main : MonoBehaviour
 
     // float totalTime = 0f;
 
+    private static Main instance;
+
+    private bool isStarted = false; 
     public Transform orc;
 
     public float Timerun;
@@ -32,7 +35,7 @@ public class Main : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("Awake");
+        instance = this;
     }
 
     void OnEnable()
@@ -87,4 +90,14 @@ public class Main : MonoBehaviour
     {
         Debug.Log("Disable");
     }
+
+    public void SetIsStarted(bool isStarted)
+    {
+        this.isStarted = isStarted;
+    }
+
+    public static Main GetInstance()
+    {
+        return instance == null ? instance = new Main(): instance;
+    } 
 }
