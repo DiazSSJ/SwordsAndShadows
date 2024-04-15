@@ -7,7 +7,6 @@ public class Main : MonoBehaviour
     private static Main instance;
 
     private bool isStarted = false;
-    public Transform orc;
     public Transform warrior;
     private Animator walkWarrior;
     public Light spotLight;
@@ -17,7 +16,6 @@ public class Main : MonoBehaviour
     private float rotationX = 0.0f;
     public float leftLimit = -2f;
     public float rightLimit = 2f;
-    private float movementDirection = 1f;
 
 
 
@@ -65,14 +63,6 @@ public class Main : MonoBehaviour
     void RotateCamera()
     {
 
-        Vector3 position = orc.position;
-        position.x += Time.deltaTime * 20.0f * movementDirection;
-        orc.position = position;
-
-        if (position.x >= rightLimit || position.x <= leftLimit)
-        {
-            movementDirection *= -1f;
-        }
 
         //Rotacion de la cámara con las teclas
         float horizontalInput = Input.GetAxis("Horizontal");
