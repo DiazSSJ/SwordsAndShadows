@@ -20,6 +20,8 @@ public class Main : MonoBehaviour
 
 
 
+
+
     void Awake()
     {
         instance = this;
@@ -62,7 +64,6 @@ public class Main : MonoBehaviour
 
     void RotateCamera()
     {
-
 
         //Rotacion de la cámara con las teclas
         float horizontalInput = Input.GetAxis("Horizontal");
