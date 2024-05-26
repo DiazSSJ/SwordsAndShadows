@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1972521786539294062}
+  - component: {fileID: 6646607128101662542}
   m_Layer: 0
   m_Name: Halloween_CoffinPumpkin_01
   m_TagString: Untagged
@@ -23,9 +24,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6081992867871950859}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -102.53, y: 3.776, z: -34.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4063056553051965245}
   - {fileID: 2121963431504407018}
@@ -37,13 +40,34 @@ Transform:
   - {fileID: 6496954986191332125}
   - {fileID: 7265302811790265404}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6646607128101662542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081992867871950859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2.3478928}
+  m_Center: {x: 0, y: 0.5, z: 0.008319855}
 --- !u!1001 &2104541265849116250
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 19825698275725232, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
@@ -107,6 +131,9 @@ PrefabInstance:
       value: Halloween_PumpkinBlobs_01 (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
 --- !u!4 &2121963431504407018 stripped
 Transform:
@@ -118,6 +145,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 19825698275725232, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
@@ -181,6 +209,9 @@ PrefabInstance:
       value: Halloween_PumpkinBlobs_01 (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
 --- !u!4 &2121963431307620198 stripped
 Transform:
@@ -192,6 +223,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 8784094376706047360, guid: 500c77834969ee549b18d7bbc61d67fb, type: 3}
@@ -255,6 +287,9 @@ PrefabInstance:
       value: -2.165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500c77834969ee549b18d7bbc61d67fb, type: 3}
 --- !u!4 &7265302811790265404 stripped
 Transform:
@@ -266,6 +301,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 2690396418427473268, guid: 50e95d746e3d4e944b75082bb7b959d1, type: 3}
@@ -317,6 +353,9 @@ PrefabInstance:
       value: Halloween_Coffin_Base_01 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e95d746e3d4e944b75082bb7b959d1, type: 3}
 --- !u!4 &4063056553051965245 stripped
 Transform:
@@ -328,6 +367,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 5124259658468666522, guid: ab2390c9f2a4cb741b2e2905ecb543c5, type: 3}
@@ -379,6 +419,9 @@ PrefabInstance:
       value: 2.095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab2390c9f2a4cb741b2e2905ecb543c5, type: 3}
 --- !u!4 &6496954986191332125 stripped
 Transform:
@@ -390,6 +433,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 6329813371208622839, guid: 0345bcd81c2ce194687bcc311e589eec, type: 3}
@@ -441,6 +485,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0345bcd81c2ce194687bcc311e589eec, type: 3}
 --- !u!4 &4730756754996177389 stripped
 Transform:
@@ -452,6 +499,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 19825698275725232, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
@@ -515,6 +563,9 @@ PrefabInstance:
       value: Halloween_PumpkinBlobs_01 (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
 --- !u!4 &2121963433116040410 stripped
 Transform:
@@ -526,6 +577,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 19825698275725232, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
@@ -589,6 +641,9 @@ PrefabInstance:
       value: Halloween_PumpkinBlobs_01 (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cab649bbc8b1f44aa6389e4ee8c0b0, type: 3}
 --- !u!4 &2121963433354336201 stripped
 Transform:
@@ -600,6 +655,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1972521786539294062}
     m_Modifications:
     - target: {fileID: 5780212396797304342, guid: 4e77eb6ec17d66c4694f77c1f2201b01, type: 3}
@@ -663,6 +719,9 @@ PrefabInstance:
       value: Halloween_Pumpkins_04 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e77eb6ec17d66c4694f77c1f2201b01, type: 3}
 --- !u!4 &5549461328837647325 stripped
 Transform:

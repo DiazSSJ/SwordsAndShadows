@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1061518359136694909}
+  - component: {fileID: 3039355933348329132}
   m_Layer: 0
   m_Name: Halloween_BenchScene_01
   m_TagString: Untagged
@@ -23,9 +24,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8279980733261140160}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -106.13, y: 3.776, z: -34.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9200342539532146878}
   - {fileID: 6132378948975474500}
@@ -44,13 +47,34 @@ Transform:
   - {fileID: 2382363312696654710}
   - {fileID: 208596720608421755}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3039355933348329132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279980733261140160}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.3774185, y: 1.1310697, z: 2.688385}
+  m_Center: {x: -0.22951889, y: 0.56553483, z: 0.046779633}
 --- !u!1001 &6971554669736274128
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 7087229394903994283, guid: c8677f00390a28d4f8f3627915f4a398, type: 3}
@@ -102,6 +126,9 @@ PrefabInstance:
       value: MMarket_Potion_Magic_Sml (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8677f00390a28d4f8f3627915f4a398, type: 3}
 --- !u!4 &208596720608421755 stripped
 Transform:
@@ -113,6 +140,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 1560248316044620307, guid: d0b2a5d733245d24d9d25659f77b85f2, type: 3}
@@ -168,6 +196,9 @@ PrefabInstance:
       value: -2.866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2a5d733245d24d9d25659f77b85f2, type: 3}
 --- !u!4 &8411225535050561110 stripped
 Transform:
@@ -179,6 +210,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 2800323864946505235, guid: 4a19738b601cdc2488ca44c3a4efc872, type: 3}
@@ -242,6 +274,9 @@ PrefabInstance:
       value: Medieval_Foliage_Fern_SideSml_B (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a19738b601cdc2488ca44c3a4efc872, type: 3}
 --- !u!4 &5515466468443892882 stripped
 Transform:
@@ -253,6 +288,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 1197365490031137799, guid: ea1d5811dd6355845b713555456a39ca, type: 3}
@@ -304,6 +340,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1d5811dd6355845b713555456a39ca, type: 3}
 --- !u!4 &8178630438620415555 stripped
 Transform:
@@ -315,6 +354,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 1583102110213139870, guid: 49c29219578307f429c15ec8bb2e90cb, type: 3}
@@ -366,6 +406,9 @@ PrefabInstance:
       value: MMarket_WizardBroomstick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c29219578307f429c15ec8bb2e90cb, type: 3}
 --- !u!4 &9200342539532146878 stripped
 Transform:
@@ -377,6 +420,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 4711171598748932349, guid: b3ecaccbd62682c48b6ec6f57d7b0cb0, type: 3}
@@ -428,6 +472,9 @@ PrefabInstance:
       value: Halloween_GraveHands_03 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ecaccbd62682c48b6ec6f57d7b0cb0, type: 3}
 --- !u!4 &3113977096023252188 stripped
 Transform:
@@ -439,6 +486,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 6953003461778646454, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
@@ -502,6 +550,9 @@ PrefabInstance:
       value: -29.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
 --- !u!4 &1185544741273134751 stripped
 Transform:
@@ -513,6 +564,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 3749007775683888729, guid: cba195241acd996408c79ca7014a10ab, type: 3}
@@ -564,6 +616,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cba195241acd996408c79ca7014a10ab, type: 3}
 --- !u!4 &6132378948975474500 stripped
 Transform:
@@ -575,6 +630,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 497962491682370874, guid: 3ad3c63d3942afd4da27877272daf1af, type: 3}
@@ -638,6 +694,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad3c63d3942afd4da27877272daf1af, type: 3}
 --- !u!4 &6624147625419000913 stripped
 Transform:
@@ -649,6 +708,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 6953003461778646454, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
@@ -712,6 +772,9 @@ PrefabInstance:
       value: 25.621
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
 --- !u!4 &1185544741857393938 stripped
 Transform:
@@ -723,6 +786,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 6953003461778646454, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
@@ -786,6 +850,9 @@ PrefabInstance:
       value: -6.075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc687804e64b5143a99ccd10efc0aef, type: 3}
 --- !u!4 &1185544741729170165 stripped
 Transform:
@@ -797,6 +864,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 4979386253339920587, guid: 9b3a7e5edb55b3140aeda317c9ee8025, type: 3}
@@ -848,6 +916,9 @@ PrefabInstance:
       value: Halloween_GraveHands_04 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3a7e5edb55b3140aeda317c9ee8025, type: 3}
 --- !u!4 &3408157678782086795 stripped
 Transform:
@@ -859,6 +930,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 4076256976862845341, guid: 33670e4c23057734a80fba6481382142, type: 3}
@@ -922,6 +994,9 @@ PrefabInstance:
       value: 457.028
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33670e4c23057734a80fba6481382142, type: 3}
 --- !u!4 &2382363312696654710 stripped
 Transform:
@@ -933,6 +1008,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 1197365490031137799, guid: ea1d5811dd6355845b713555456a39ca, type: 3}
@@ -988,6 +1064,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1d5811dd6355845b713555456a39ca, type: 3}
 --- !u!4 &8178630439036471061 stripped
 Transform:
@@ -999,6 +1078,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 7143849752710840768, guid: 59106e73a9516804d8647efa34cc4805, type: 3}
@@ -1050,6 +1130,9 @@ PrefabInstance:
       value: 11.742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59106e73a9516804d8647efa34cc4805, type: 3}
 --- !u!4 &160367193852748480 stripped
 Transform:
@@ -1061,6 +1144,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1061518359136694909}
     m_Modifications:
     - target: {fileID: 4655218243663021026, guid: 2d58e130c8cd85546bdb13956f3bb960, type: 3}
@@ -1124,6 +1208,9 @@ PrefabInstance:
       value: Halloween_VoodooDoll (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d58e130c8cd85546bdb13956f3bb960, type: 3}
 --- !u!4 &3084060178738269667 stripped
 Transform:

@@ -10,33 +10,55 @@ public class Main : MonoBehaviour
     public Transform warrior;
     private Animator walkWarrior;
     public Light spotLight;
-    public float cameraSpeed = 5f;
+    public float moveSpeed = 5f;
     public float horizontalSpeed = 2.0f;
     public float verticalSpeed = 2.0f;
     private float rotationX = 0.0f;
     public float leftLimit = -2f;
     public float rightLimit = 2f;
+    public Vector3 cameraOffset = new Vector3(0, 8.580748f, -30.19307f); // Offset para la cámara en tercera persona
+    public float followSpeed = 10f; // Velocidad de seguimiento de la cámara
+    public float cameraSpeed = 5f;
 
-
-
-
-
+    private Rigidbody warriorRigidbody;
 
     void Awake()
     {
         instance = this;
+        warriorRigidbody = warrior.GetComponent<Rigidbody>();
+
+        // Si el guerrero no tiene un Rigidbody, añadir uno
+        if (warriorRigidbody == null)
+        {
+            warriorRigidbody = warrior.gameObject.AddComponent<Rigidbody>();
+        }
+        
+        // Activar la gravedad para el guerrero
+        warriorRigidbody.useGravity = true;
+        
+        // Hacer que el Rigidbody no sea cinemático para usar la física
+        warriorRigidbody.isKinematic = false;
     }
 
     void Start()
     {
         walkWarrior = warrior.GetComponent<Animator>();
         walkWarrior.enabled = false;
+
+        // Posicionar inicialmente la cámara en la posición correcta
+        Vector3 initialCameraPosition = warrior.position + cameraOffset;
+        transform.position = initialCameraPosition;
+    }
+
+    void FixedUpdate()
+    {
+        MoveWarrior();
     }
 
     void Update()
     {
-        MoveWarrior();
         MoveSpotLight();
+        FollowWarrior();
         RotateCamera();
     }
 
@@ -47,8 +69,13 @@ public class Main : MonoBehaviour
 
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
         moveDirection = transform.TransformDirection(moveDirection);
-        warrior.position += moveDirection * cameraSpeed * Time.deltaTime;
+        Vector3 newPosition = warriorRigidbody.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
+        
+        // Mantener la posición Y constante
+        newPosition.y = warriorRigidbody.position.y;
 
+        // Mover al guerrero usando la física
+        warriorRigidbody.MovePosition(newPosition);
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
@@ -62,23 +89,22 @@ public class Main : MonoBehaviour
         }
     }
 
+    void FollowWarrior()
+    {
+        // Calcular la posición objetivo de la cámara en tercera persona
+        Vector3 targetPosition = warrior.position + cameraOffset;
+
+        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+    }
+
     void RotateCamera()
     {
-
-        //Rotacion de la cámara con las teclas
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-        moveDirection = transform.TransformDirection(moveDirection);
-        transform.position += moveDirection * cameraSpeed * Time.deltaTime;
-
         // Rotación de la cámara con el mouse
         rotationX += Input.GetAxis("Mouse X") * horizontalSpeed;
-        // rotationY += Input.GetAxis("Mouse Y") * verticalSpeed;
-        // rotationY = Mathf.Clamp(rotationY, -90, 90);
+        rotationX = Mathf.Clamp(rotationX, leftLimit, rightLimit); // Limitar la rotación en el eje X
+
+        // Aplicar la rotación a la cámara
         transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        // transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
     }
 
     void MoveSpotLight()
@@ -88,7 +114,6 @@ public class Main : MonoBehaviour
         Vector3 lightPosition = new Vector3(warriorPosition.x, spotLight.transform.position.y, warriorPosition.z);
         spotLight.transform.position = lightPosition;
     }
-
 
     public void SetIsStarted(bool isStarted)
     {
