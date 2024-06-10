@@ -13,17 +13,19 @@ public class Main : MonoBehaviour
     public float moveSpeed = 5f;
     public float runSpeed = 10f;
     public float jumpForce = 10f; // Fuerza del salto
-    public float horizontalSpeed = 2.0f;
+    public float horizontalSpeed = 20.0f;
+        public float rotationSpeed = 100f; // Velocidad de rotación
     public float verticalSpeed = 2.0f;
     private float rotationX = 0.0f;
-    public float leftLimit = -2f;
-    public float rightLimit = 2f;
     public Vector3 cameraOffset = new Vector3(0, 8.580748f, -30.19307f); // Offset para la cámara en tercera persona
     public float followSpeed = 8f; // Velocidad de seguimiento de la cámara
     public float cameraSpeed = 5f;
     public float lateralMoveDistance = 1.0f; // Distancia de movimiento lateral
+    public float leftLimit = -45f; // Límite izquierdo de rotación en grados
+    public float rightLimit = 45f; // Límite derecho de rotación en grados
 
     private Rigidbody warriorRigidbody;
+    private float currentRotationY = 0f;
 
     void Awake()
     {
@@ -62,7 +64,7 @@ public class Main : MonoBehaviour
         MoveSpotLight();
         FollowWarrior();
         MoveWarrior();
-        // RotateCamera();
+        //RotateWarrior();
         CheckLateralMovement();
     }
 
@@ -70,10 +72,9 @@ public class Main : MonoBehaviour
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-        bool isRunning = Input.GetKey(KeyCode.LeftControl); // Cambiado de LeftShift a LeftControl
-        bool walkingPressed = Input.GetKey("w");
+        bool walkingPressed = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"); // Activar con "w", "a", "s" o "d"
 
-        float currentSpeed = isRunning ? runSpeed : moveSpeed;
+        float currentSpeed = moveSpeed;
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
 
         moveDirection = transform.TransformDirection(moveDirection);
@@ -97,21 +98,12 @@ public class Main : MonoBehaviour
         if (walkingPressed)
         {
             warriorAnimator.SetBool("IsWalking", true);
-            warriorAnimator.SetBool("IsRunning", false);
             warriorAnimator.SetBool("IsIdle", false);
         }
-        if (isRunning && walkingPressed)
-        {
-            warriorAnimator.SetBool("IsRunning", true);
-            warriorAnimator.SetBool("IsWalking", false);
-            warriorAnimator.SetBool("IsIdle", false);
-
-        }
-        if (!isRunning && !walkingPressed && speed <= 0)
+        if (!walkingPressed && speed <= 0)
         {
             warriorAnimator.SetBool("IsIdle", true);
             warriorAnimator.SetBool("IsWalking", false);
-            warriorAnimator.SetBool("IsRunning", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(warriorRigidbody.velocity.y) < 0.001f)
@@ -122,7 +114,40 @@ public class Main : MonoBehaviour
             warriorRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             warriorAnimator.SetBool("IsIdle", false);
         }
+
+        if (Input.GetMouseButtonDown(1)) // Detectar clic izquierdo
+        {
+            // Activar la animación de ataque
+            warriorAnimator.SetTrigger("attack");
+            warriorAnimator.SetBool("IsIdle", false);
+            warriorAnimator.SetBool("IsWalking", false);
+        }
+
+        if (Input.GetKey("f"))
+        {
+            // Activar la animación de twerk
+            warriorAnimator.SetTrigger("dancing");
+            warriorAnimator.SetBool("IsIdle", false);
+            warriorAnimator.SetBool("IsWalking", false);
+        }
+
+        // Rotación del guerrero con límites
+        if (Input.GetKey(KeyCode.A))
+        {
+            currentRotationY -= rotationSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            currentRotationY += rotationSpeed * Time.deltaTime;
+        }
+
+        // Limitar la rotación
+        currentRotationY = Mathf.Clamp(currentRotationY, leftLimit, rightLimit);
+
+        // Aplicar la rotación limitada al guerrero
+        warrior.rotation = Quaternion.Euler(0, currentRotationY, 0);
     }
+    
 
     void CheckLateralMovement()
     {
@@ -138,23 +163,18 @@ public class Main : MonoBehaviour
         }
     }
 
-    void FollowWarrior()
+
+void FollowWarrior()
     {
         // Calcular la posición objetivo de la cámara en tercera persona
         Vector3 targetPosition = warrior.position + cameraOffset;
-
         transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+
+        // Sincronizar la rotación de la cámara con la del guerrero
+        Quaternion targetRotation = Quaternion.Euler(0, currentRotationY, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, followSpeed * Time.deltaTime);
     }
 
-    // void RotateCamera()
-    // {
-    //     // Rotación de la cámara con el mouse
-    //     rotationX += Input.GetAxis("Mouse X") * horizontalSpeed;
-    //     rotationX = Mathf.Clamp(rotationX, leftLimit, rightLimit); // Limitar la rotación en el eje X
-
-    //     // Aplicar la rotación a la cámara
-    //     transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-    // }
 
     void MoveSpotLight()
     {
@@ -163,17 +183,6 @@ public class Main : MonoBehaviour
         Vector3 lightPosition = new Vector3(warriorPosition.x, spotLight.transform.position.y, warriorPosition.z);
         spotLight.transform.position = lightPosition;
     }
-
-    // void CheckJump()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(warriorRigidbody.velocity.y) < 0.001f)
-    //     {
-    //         // Activar la animación de salto
-    //         warriorAnimator.SetTrigger("Jump");
-    //         // Aplicar fuerza hacia arriba para el salto
-    //         warriorRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    //     }
-    // }
 
     public void SetIsStarted(bool isStarted)
     {
