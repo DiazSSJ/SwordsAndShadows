@@ -17,7 +17,7 @@ public class Main : MonoBehaviour
         public float rotationSpeed = 100f; // Velocidad de rotación
     public float verticalSpeed = 2.0f;
     private float rotationX = 0.0f;
-    public Vector3 cameraOffset = new Vector3(0, 8.580748f, -30.19307f); // Offset para la cámara en tercera persona
+    public Vector3 cameraOffset = new Vector3(0, 8.580748f, -40.19307f); // Offset para la cámara en tercera persona
     public float followSpeed = 8f; // Velocidad de seguimiento de la cámara
     public float cameraSpeed = 5f;
     public float lateralMoveDistance = 1.0f; // Distancia de movimiento lateral
@@ -26,6 +26,8 @@ public class Main : MonoBehaviour
 
     private Rigidbody warriorRigidbody;
     private float currentRotationY = 0f;
+
+    public AudioClip baileSonido;
 
     void Awake()
     {
@@ -125,6 +127,7 @@ public class Main : MonoBehaviour
 
         if (Input.GetKey("f"))
         {
+            ControladorSonido.instance.EjecutarSonido(baileSonido);
             // Activar la animación de twerk
             warriorAnimator.SetTrigger("dancing");
             warriorAnimator.SetBool("IsIdle", false);
