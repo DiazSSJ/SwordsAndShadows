@@ -14,7 +14,7 @@ public class Main : MonoBehaviour
     public float runSpeed = 10f;
     public float jumpForce = 10f; // Fuerza del salto
     public float horizontalSpeed = 20.0f;
-        public float rotationSpeed = 100f; // Velocidad de rotación
+    public float rotationSpeed = 100f; // Velocidad de rotación
     public float verticalSpeed = 2.0f;
     private float rotationX = 0.0f;
     public Vector3 cameraOffset = new Vector3(0, 8.580748f, -40.19307f); // Offset para la cámara en tercera persona
@@ -28,6 +28,8 @@ public class Main : MonoBehaviour
     private float currentRotationY = 0f;
 
     public AudioClip baileSonido;
+
+    public Collider handCollider;
 
     void Awake()
     {
@@ -54,6 +56,7 @@ public class Main : MonoBehaviour
         // Posicionar inicialmente la cámara en la posición correcta
         Vector3 initialCameraPosition = warrior.position + cameraOffset;
         transform.position = initialCameraPosition;
+        handCollider.enabled = false;
     }
 
     void FixedUpdate()
@@ -120,10 +123,13 @@ public class Main : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) // Detectar clic izquierdo
         {
             // Activar la animación de ataque
+            handCollider.enabled = true;
             warriorAnimator.SetTrigger("attack");
             warriorAnimator.SetBool("IsIdle", false);
             warriorAnimator.SetBool("IsWalking", false);
+
         }
+
 
         if (Input.GetKey("f"))
         {
@@ -150,7 +156,7 @@ public class Main : MonoBehaviour
         // Aplicar la rotación limitada al guerrero
         warrior.rotation = Quaternion.Euler(0, currentRotationY, 0);
     }
-    
+
 
     void CheckLateralMovement()
     {
@@ -167,7 +173,7 @@ public class Main : MonoBehaviour
     }
 
 
-void FollowWarrior()
+    void FollowWarrior()
     {
         // Calcular la posición objetivo de la cámara en tercera persona
         Vector3 targetPosition = warrior.position + cameraOffset;
