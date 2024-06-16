@@ -128,8 +128,9 @@ public class Main : MonoBehaviour
             warriorAnimator.SetBool("IsIdle", false);
             warriorAnimator.SetBool("IsWalking", false);
 
+            // Iniciar la corrutina para desactivar el handCollider
+            StartCoroutine(DisableHandCollider());
         }
-
 
         if (Input.GetKey("f"))
         {
@@ -157,6 +158,12 @@ public class Main : MonoBehaviour
         warrior.rotation = Quaternion.Euler(0, currentRotationY, 0);
     }
 
+    IEnumerator DisableHandCollider()
+    {
+        // Esperar un breve período antes de desactivar el handCollider
+        yield return new WaitForSeconds(2f); // Ajusta el tiempo según sea necesario
+        handCollider.enabled = false;
+    }
 
     void CheckLateralMovement()
     {
@@ -172,7 +179,6 @@ public class Main : MonoBehaviour
         }
     }
 
-
     void FollowWarrior()
     {
         // Calcular la posición objetivo de la cámara en tercera persona
@@ -183,7 +189,6 @@ public class Main : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0, currentRotationY, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, followSpeed * Time.deltaTime);
     }
-
 
     void MoveSpotLight()
     {

@@ -24,29 +24,52 @@ public class EnemyLogic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // hand.enabled = true;
-        Debug.Log("poniendo en true el colider");
+        Debug.Log("Activando el collider");
 
         if (other.CompareTag("handImpact"))
         {
-            Debug.Log("tocnado al enemigo");
-            Debug.Log("vida del man este " + hp);
             if (enemy1 != null)
             {
-                Debug.Log("entré al enemigo");
-                Debug.Log("vida del man este abajo " + hp);
-                enemy1.SetBool("IsDamage", true);
-                // enemy1.SetBool("", true);
-                enemy1.SetBool("isIdle", false);
+                Debug.Log("Entré en el enemigo");
+                Debug.Log("Vida del enemigo: " + hp);
+                if (hp == 0)
+                {
+                    StartCoroutine(HandleDeadAnimation());
+                }
+                else
+                {
+                    StartCoroutine(HandleDamageAnimation());
+                    hp -= HandHurt;
+                }
+
             }
-            hp -= HandHurt;
-            enemy1.SetBool("IsDamage", false);
-            enemy1.SetBool("isIdle", true);
+
         }
-        // hand.enabled = false;
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
+
+    }
+
+    private IEnumerator HandleDamageAnimation()
+    {
+        enemy1.SetBool("IsDamage", true);
+        enemy1.SetBool("isIdle", false);
+        yield return new WaitForSeconds(1f); // Ajusta el tiempo según la duración de tu animación de daño
+        enemy1.SetBool("IsAttacking", true);
+        enemy1.SetBool("IsDamage", false);
+        yield return new WaitForSeconds(1f); // Ajusta el tiempo según la duración de tu animación de daño
+        enemy1.SetBool("IsAttacking", false);
+        enemy1.SetBool("IsDamage", false);
+        enemy1.SetBool("isIdle", true);
+    }
+
+
+    private IEnumerator HandleDeadAnimation()
+    {
+        enemy1.SetBool("IsDead", true);
+        enemy1.SetBool("IsDamage", false);
+        enemy1.SetBool("isIdle", false);
+        enemy1.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(1.2f);
+        Destroy(gameObject);
     }
 
 }
