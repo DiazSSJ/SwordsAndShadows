@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class EfectoSonido : MonoBehaviour
 {
-
-    // private AudioSource audioSource;
-
     [SerializeField] private AudioClip sonidoGema;
-
-    // private void Start()
-    // {
-    //     audioSource = GetComponent<AudioSource>();
-    // }
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +13,7 @@ public class EfectoSonido : MonoBehaviour
             Debug.Log("Player ha tocado la gema.");
             ControladorSonido.instance.EjecutarSonido(sonidoGema);
             Destroy(gameObject);
+            Door.IncrementarGemas();
         }
 
         Debug.Log("sonidooooooooo");

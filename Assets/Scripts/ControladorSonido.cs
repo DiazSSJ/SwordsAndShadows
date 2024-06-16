@@ -18,6 +18,7 @@ public class ControladorSonido : MonoBehaviour
         else
         {
             Destroy(gameObject); // Destruir instancias duplicadas
+            Debug.LogError("Multiple instances of ControladorSonido singleton detected!");
         }
 
         audioSource = GetComponent<AudioSource>();
