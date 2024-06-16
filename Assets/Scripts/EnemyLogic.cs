@@ -8,11 +8,14 @@ public class EnemyLogic : MonoBehaviour
     public int hp;
     public int HandHurt;
 
+    public GameObject gema;
+
     public Animator enemy1;
     // Start is called before the first frame update
     void Start()
     {
         enemy1 = enemy1.GetComponent<Animator>();
+        gema.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,6 +73,7 @@ public class EnemyLogic : MonoBehaviour
         enemy1.SetBool("IsAttacking", false);
         yield return new WaitForSeconds(1.2f);
         Destroy(gameObject);
+        gema.SetActive(true);
     }
 
 }
