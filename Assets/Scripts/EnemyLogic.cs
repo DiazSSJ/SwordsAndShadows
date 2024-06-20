@@ -140,7 +140,7 @@ public class EnemyLogic : MonoBehaviour
             enemy1.SetBool("IsDamage", false);
             enemy1.SetBool("isIdle", false);
             enemy1.SetBool("IsAttacking", false);
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(4.5f);
             Destroy(gameObject);
             gema.SetActive(true);
         }
@@ -150,7 +150,7 @@ public class EnemyLogic : MonoBehaviour
             enemy1.SetBool("IsDamage", false);
             enemy1.SetBool("isIdle", false);
             enemy1.SetBool("IsAttacking", false);
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(4.5f);
             Destroy(gameObject);
             gema.SetActive(true);
         }
